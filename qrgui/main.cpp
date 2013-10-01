@@ -4,6 +4,7 @@
 #include "mainwindow/mainWindow.h"
 #include "thirdparty/windowsmodernstyle.h"
 #include "qRealApplication.h"
+#include "qRealUpdater.h"
 
 using namespace qReal;
 
@@ -53,6 +54,11 @@ int main(int argc, char *argv[])
 	app.setStyle(new WindowsModernStyle());
 #endif
 
+	QRealUpdater updater(argv);
+	updater.startUpdater();
+	if (updater.hasUpdates()) {
+		return 0;
+	}
 	MainWindow window(fileToOpen);
 	if (window.isVisible()) {
 		return app.exec();

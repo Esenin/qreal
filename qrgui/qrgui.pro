@@ -8,7 +8,8 @@ macx {
 
 RESOURCES = qrgui.qrc
 SOURCES = main.cpp \
-    qRealApplication.cpp
+    qRealApplication.cpp \
+    qRealUpdater.cpp
 
 TRANSLATIONS = qrgui_ru.ts
 
@@ -84,4 +85,5 @@ include (textEditor/textEditor.pri)
 include (hotKeyManager/hotKeyManager.pri)
 
 HEADERS += \
-    qRealApplication.h
+    qRealApplication.h \
+    qRealUpdater.h
