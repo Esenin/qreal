@@ -38,6 +38,7 @@ void PreferencesBehaviourPage::save()
 	SettingsManager::setValue("Autosave", mUi->autoSaveCheckBox->isChecked());
 	SettingsManager::setValue("AutosaveInterval", mUi->autoSaveSpinBox->value());
 	SettingsManager::setValue("gestureDelay", mUi->gestureDelaySpinBox->value());
+	SettingsManager::setValue("updaterActive", mUi->makeUpdatesCheckBox->isChecked());
 }
 
 void PreferencesBehaviourPage::restoreSettings()
@@ -46,6 +47,7 @@ void PreferencesBehaviourPage::restoreSettings()
 	mUi->autoSaveCheckBox->setChecked(SettingsManager::value("Autosave").toBool());
 	mUi->autoSaveSpinBox->setValue(SettingsManager::value("AutosaveInterval").toInt());
 	mUi->gestureDelaySpinBox->setValue(SettingsManager::value("gestureDelay").toInt());
+	mUi->makeUpdatesCheckBox->setChecked(SettingsManager::value("updaterActive", true).toBool());
 
 	showAutoSaveBox(mUi->autoSaveCheckBox->isChecked());
 }
