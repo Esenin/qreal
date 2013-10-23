@@ -31,9 +31,9 @@ void QRealUpdater::executeUpdater()
 {
 	QString const programPath = mUpdaterPath + "qrUpdater";
 	QStringList arguments;
-	arguments << "-unit" << "windows"
+	arguments << "-unit" << "qrealBP-windows"
 			<< "-version" << SettingsManager::value("version").toString()
-			<< "-url" << "http://localhost/updates.xml";
+			<< "-url" << "https://dl.dropboxusercontent.com/s/ukc0tn6fiueg7u9/updates.xml?token_hash=AAFS8VRpQl0WKfITMZA5k4bMI9k_1MXDZJxgEQ9EcOMDxA&dl=1";
 
 	mUpdaterProcess = new QProcess();
 	mUpdaterProcess->setWorkingDirectory(mUpdaterPath);
